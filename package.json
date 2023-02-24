@@ -1,4 +1,5 @@
 {
+  "homepage":"https://gn0va.github.io/GN0VA.github.io.git",
   "name": "app-lista",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +14,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,7 +41,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/GN0VA/GN0VA.github.io"

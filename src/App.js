@@ -1,23 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header.js'
+import AddItemForm from './addItemForm.js'
+import {Item} from './Item.js'
+import { useState } from 'react';
+import Persona from './img/person.png'
+
 
 function App() {
+  const [items,setItems] = useState([])
+  const addItem = (item) =>{
+    setItems((prev)=> [...prev,item])
+  }
+  const removeItem=(itemId)=>{
+    setItems((prev)=> prev.filter((item)=> item.id !== itemId))
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className='container'>
+        <div className='lista'>
+            <h1>LISTA DE LA COMPRA</h1>
+            <AddItemForm addItem={addItem}/>
+            <div className='content'>
+              <ul className='items'>
+                {items.map((item)=>(
+                  <Item key={item.id} item={item} removeItem={removeItem}/>
+                ))}
+              </ul>
+            </div>
+        </div>
+        <div className='imagen'>
+                  <img src={Persona}/>
+        </div>
+      </div>
     </div>
   );
 }

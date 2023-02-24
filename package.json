@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "gh-pages": "^5.0.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1"
   },
@@ -11,8 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "react-scripts test"
   },
   "repository": {
     "type": "git",

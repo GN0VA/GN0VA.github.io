@@ -1,5 +1,6 @@
 import { useState } from "react";
 import generateId from "./utilities";
+
 export default function AddItemForm(props){
     const [text,setText] = useState('')
     const handleTextChange = (event)=>{
@@ -18,14 +19,15 @@ export default function AddItemForm(props){
             setText('')
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
             <input 
                 type="text"
                 value={text}
                 onChange={handleTextChange}
                 placeholder="Introduce un producto"
+                className="input-lista"
             />
-            <input type="submit" value="añadir"/>
+            <input type="submit" value='Añadir' className="submit-lista"/>
         </form>
     )
 }

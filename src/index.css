@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: red 1px solid */
+  
 }
 body {
   margin: 0;
@@ -14,8 +16,8 @@ body {
   z-index: -999;
 }
 .App{
-  background-color: rgba(255, 255, 255, 0.481);
-  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.50);
+  backdrop-filter: blur(10px);
   width: 100%;
   height: 100vh;
   z-index: 999;
@@ -27,27 +29,98 @@ header{
   position: absolute;
   width: 100%;
   height: 100px;
+  padding: 10px;
 }
 .container{
   display: flex;
   height: 100vh;
   flex-direction: row;
-  border: solid red 1px;
+
   align-items: center;
   justify-content: space-between;
-  padding: 86px;
+  
+  padding: 160px;
+  padding-top:280px ;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .content{
-  background-color: rgba(255, 255, 255, 0.175);
+  background-color: rgba(255, 255, 255, 0.50);
   border: rgba(0, 0, 0, 0.179) 1px solid;
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.184);
   width: 500px;
   height: 450px;
+  padding: 35px 0px;
+  
+  justify-content: center;
+  gap: 10px;
   border-radius: 20px;
+  display: flex;
+  overflow:auto;
+
+}
+
+.input-lista ,.submit-lista{
+ 
+  background-color: rgba(255, 255, 255, 0.50);
+  border: rgba(0, 0, 0, 0.179) 1px solid;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.184);
+  border-radius: 50px;
+  padding: 15px 60px;
+}
+.submit-lista{
+  color: #5A7FFF;
+  font-weight: bold;
+  cursor: pointer;
+}
+.submit-lista:hover{
+  color: white;
+  background-color: #5A7FFF;
 }
 .imagen img{
   width: 600px;
   height: 600px;
+}
+.item{
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding-left:50px;
+  align-items: center;
+  width: 435px;
+  height: 50px;
+  background-color: #5A7FFF;
+  border: rgba(0, 0, 0, 0.179) 1px solid;
+  border-radius: 15px;
+  box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.184);
+  color: white;
+  flex-shrink: 0;
+}
+.text{
+  margin:auto
+}
+.remove-botton{
+  margin:10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding-right:10px ;
+  font-weight: bold;
+  height: 20px;
+  justify-self: end;
+}
+.items{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

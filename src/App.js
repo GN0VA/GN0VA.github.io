@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './Header.js'
 import AddItemForm from './addItemForm.js'
 import {Item} from './Item.js'
 import { useState } from 'react';
 import Persona from './img/person.png'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 function App() {
@@ -23,11 +24,15 @@ function App() {
             <h1>LISTA DE LA COMPRA</h1>
             <AddItemForm addItem={addItem}/>
             <div className='content'>
-              <ul className='items'>
-                {items.map((item)=>(
-                  <Item key={item.id} item={item} removeItem={removeItem}/>
-                ))}
-              </ul>
+              <TransitionGroup>
+                <div className='items'>
+                  {items.map((item)=>(
+                    <CSSTransition timeout={500} classNames="item-transition">
+                      <Item key={item.id} item={item} removeItem={removeItem}/>
+                    </CSSTransition>
+                  ))}
+                </div>
+              </TransitionGroup>
             </div>
         </div>
         <div className='imagen'>

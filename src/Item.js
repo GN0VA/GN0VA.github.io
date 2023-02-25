@@ -1,14 +1,19 @@
-import Close from "./img/close.png"
-import logo from "./img/logo_mario.png"
+
 import {AiOutlineClose} from 'react-icons/ai'
 
 export function Item (props){
     const {item , removeItem}= props;
-    const handleRemoveClick = ()=>{
-        removeItem(item.id)
+    let removeActive=true
+    const handleRemoveClick = (event)=>{
+        const element = event.target.closest(".item");
+        element.classList.add("removing");
+        setTimeout(()=>{
+            removeItem(item.id)
+        },1000)
+        
     }
     return(
-        <li className="item">
+        <div className="item">
             
             <button
             className="remove-botton"
@@ -17,8 +22,8 @@ export function Item (props){
             >
                 <AiOutlineClose/>
             </button>
-            <div className="text">{item.text}</div>
+            <div className="text"><p className="item-text">{item.text}</p></div>
             
-        </li>
+        </div>
     )
 }

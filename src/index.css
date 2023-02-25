@@ -36,9 +36,10 @@ header{
   height: 100%;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 100px;
-  padding: 160px;
-  padding-top:280px ;
+  padding-top: 140px;
+  
 }
 .form {
   display: flex;
@@ -135,7 +136,28 @@ code {
 
 
 
-
+@media(max-width:400px){
+  .imagen{
+    display: none;
+  }
+  .lista{
+    width: 300px;
+    height: 300px;
+  }
+  .content{
+    width: 300px;
+    height: 300px;
+  }
+  .container{
+    padding: 0;
+  }
+  .input-lista ,.submit-lista{
+    padding: 10px;
+  }
+  h1{
+    font-size: 25px;
+  }
+}
 
 /* animaciones */
 @keyframes removing {

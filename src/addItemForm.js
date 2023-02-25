@@ -13,7 +13,7 @@ export default function AddItemForm(props){
                 text: text
 
             }
-            if (text.length > 0 && text.length<40){
+            if (text.length > 0 && text.length<25){
                 props.addItem(item)
             }else{
                 alert('El texto introducido no es valido')

@@ -147,6 +147,7 @@ code {
   .content{
     width: 300px;
     height: 300px;
+    padding: 25px 0;
   }
   .container{
     padding: 0;
@@ -156,6 +157,10 @@ code {
   }
   h1{
     font-size: 25px;
+  }
+  .item{
+    height: 40px;
+    width: 250px;
   }
 }
 
